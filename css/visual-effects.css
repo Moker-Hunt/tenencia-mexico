@@ -1,0 +1,405 @@
+/* Efectos visuales y animaciones para mejorar la apariencia del sitio */
+
+/* Efectos para imágenes */
+.card-image {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.card-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(163, 36, 36, 0.3) 0%, rgba(255, 185, 69, 0.3) 100%);
+    z-index: 1;
+    opacity: 0.7;
+    transition: opacity 0.5s ease;
+}
+
+.info-card:hover .card-image::before {
+    opacity: 0.9;
+}
+
+/* Efectos de texto */
+article h2 {
+    position: relative;
+    overflow: hidden;
+}
+
+article h2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 185, 69, 0.2), transparent);
+    animation: shimmer 3s infinite;
+    z-index: -1;
+}
+
+@keyframes shimmer {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Efectos para tarjetas */
+.info-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.info-card:hover {
+    transform: translateY(-10px) scale(1.01);
+}
+
+.info-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--gradient-1);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.info-card:hover::after {
+    transform: scaleX(1);
+}
+
+.info-card.reverse::after {
+    background: var(--gradient-4);
+}
+
+/* Efectos para botones */
+.btn {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: all 0.5s ease;
+    z-index: -1;
+}
+
+.btn:hover::before {
+    left: 100%;
+    animation: btn-shine 1.5s ease;
+}
+
+@keyframes btn-shine {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Efectos para listas */
+.card-content ul li, .card-content ol li {
+    transition: all 0.3s ease;
+}
+
+.card-content ul li:hover, .card-content ol li:hover {
+    transform: translateX(5px);
+    color: var(--carmine-red);
+}
+
+/* Efectos para tablas */
+tbody tr {
+    transition: all 0.3s ease;
+}
+
+tbody tr:hover {
+    background-color: rgba(255, 185, 69, 0.2);
+    transform: scale(1.01);
+}
+
+/* Efectos para secciones de pasos */
+.steps li {
+    transition: all 0.3s ease;
+}
+
+.steps li:hover {
+    transform: translateX(10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.steps li::before {
+    transition: all 0.3s ease;
+}
+
+.steps li:hover::before {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 5px 15px rgba(163, 36, 36, 0.4);
+}
+
+/* Efectos para cajas destacadas */
+.highlight-box {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.highlight-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.highlight-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--gradient-5);
+    transition: all 0.3s ease;
+}
+
+.highlight-box:hover::before {
+    width: 7px;
+}
+
+/* Efectos para grids */
+.info-grid > div {
+    transition: all 0.3s ease;
+}
+
+.info-grid > div:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+/* Efectos para citas */
+blockquote {
+    transition: all 0.3s ease;
+}
+
+blockquote:hover {
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Efectos para el header al hacer scroll */
+#site-header {
+    transition: all 0.4s ease;
+}
+
+#site-header.scrolled {
+    background: linear-gradient(135deg, rgba(163, 36, 36, 0.95), rgba(255, 185, 69, 0.95));
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    padding: 10px 0;
+}
+
+/* Efectos para el menú de navegación */
+#main-nav a {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+#main-nav a::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--amber-gold);
+    transition: width 0.3s ease;
+}
+
+#main-nav a:hover::before {
+    width: 100%;
+}
+
+/* Efectos para el footer */
+.footer-links a {
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+    transform: translateX(5px);
+    color: var(--amber-gold);
+}
+
+/* Animación para la página al cargar */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    70% {
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+main {
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Clases para animaciones controladas por JavaScript */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.steps li.in-view {
+    animation: slideInRight 0.5s ease forwards;
+}
+
+.beneficio-card.in-view {
+    animation: popIn 0.5s ease forwards;
+}
+
+/* Efectos adicionales para elementos activos */
+.steps li.active {
+    transform: translateX(15px) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+.beneficio-card.active {
+    transform: translateY(-10px) !important;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+.info-card.active {
+    transform: scale(1.02) !important;
+}
+
+/* Efecto para el header al hacer scroll */
+#site-header.header-hidden {
+    transform: translateY(-100%);
+}
+
+/* Estilos para los números de paso mejorados */
+.step-number {
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-1);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Staatliches', sans-serif;
+    font-size: 1.8rem;
+    box-shadow: 0 5px 15px rgba(163, 36, 36, 0.3);
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.steps li.active .step-number {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 8px 25px rgba(163, 36, 36, 0.4);
+}
+
+/* Efectos para imágenes cuando se carguen */
+.card-image img {
+    transition: all 0.5s ease;
+}
+
+.card-image:hover img {
+    transform: scale(1.05);
+}
+
+/* Efectos para el banner de cookies */
+.cookie-consent {
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+#acceptCookies {
+    position: relative;
+    overflow: hidden;
+}
+
+#acceptCookies::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: all 0.5s ease;
+}
+
+#acceptCookies:hover::after {
+    left: 100%;
+}

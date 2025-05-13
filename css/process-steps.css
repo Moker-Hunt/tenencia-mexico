@@ -1,0 +1,150 @@
+/* Специальные стили для пронумерованных шагов процесса */
+
+/* Контейнер для процесса */
+.process-container {
+    position: relative;
+    margin: 40px 0;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Вертикальная линия процесса */
+.process-timeline {
+    position: absolute;
+    top: 0;
+    left: 40px;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--carmine-red), var(--amber-gold));
+    border-radius: 4px;
+}
+
+/* Стили для шагов процесса */
+.process-steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.process-step {
+    position: relative;
+    padding: 0 0 30px 90px;
+    margin-bottom: 0;
+}
+
+.process-step:last-child {
+    padding-bottom: 0;
+}
+
+/* Номер шага */
+.step-number {
+    position: absolute;
+    left: -60px;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    background: var(--gradient-1);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Staatliches', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(163, 36, 36, 0.3);
+    z-index: 2;
+}
+
+/* Заголовок шага */
+.step-title {
+    margin: 0 0 10px 0;
+    color: var(--carmine-red);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* Описание шага */
+.step-description {
+    margin: 0;
+    color: var(--text-color);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Стили для активного шага при наведении */
+.process-step:hover .step-number {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(163, 36, 36, 0.4);
+}
+
+.process-step:hover .step-title {
+    color: var(--amber-gold);
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .process-container {
+        padding: 15px 10px;
+    }
+    
+    .process-timeline {
+        left: 25px;
+    }
+    
+    .process-step {
+        padding-left: 60px;
+        padding-bottom: 25px;
+    }
+    
+    .step-number {
+        left: -50px;
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
+    }
+    
+    .step-title {
+        font-size: 1.1rem;
+    }
+    
+    .step-description {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .process-container {
+        padding: 10px 5px;
+        margin: 20px 0;
+    }
+    
+    .process-timeline {
+        left: 20px;
+        width: 3px;
+    }
+    
+    .process-step {
+        padding-left: 50px;
+        padding-bottom: 20px;
+    }
+    
+    .step-number {
+        left: -45px;
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+    }
+    
+    .step-title {
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+    
+    .step-description {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+}

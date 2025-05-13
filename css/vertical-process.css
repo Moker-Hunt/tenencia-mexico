@@ -1,0 +1,273 @@
+/* Стили для вертикального процесса с линией и номерами */
+
+/* Контейнер для процесса */
+.vertical-process {
+    position: relative;
+    margin: 30px 0;
+    padding: 0 0 0 80px;
+}
+
+/* Вертикальная линия */
+.vertical-process::before {
+    content: '';
+    position: absolute;
+    left: 80px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--carmine-red), var(--amber-gold));
+    z-index: 1;
+}
+
+/* Шаг процесса */
+.process-item {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 20px;
+}
+
+.process-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Номер шага */
+.process-number {
+    position: absolute;
+    left: -100px;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    background: var(--gradient-1);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Staatliches', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(163, 36, 36, 0.3);
+    z-index: 2;
+}
+
+/* Заголовок шага */
+.process-title {
+    margin: 0 0 10px 0;
+    color: var(--carmine-red);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* Описание шага */
+.process-description {
+    margin: 0;
+    color: var(--text-color);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Первая буква в описании */
+.process-description strong:first-child {
+    color: var(--carmine-red);
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+/* Специальные стили для вложенных шагов (как на третьем скриншоте) */
+.nested-items {
+    margin: 15px 0 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nested-item {
+    position: relative;
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border-left: 3px solid var(--amber-gold);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.nested-item-number {
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background: var(--gradient-4);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0 3px 10px rgba(255, 185, 69, 0.3);
+    z-index: 2;
+}
+
+.nested-item-title {
+    margin: 0 0 5px 0;
+    color: var(--amber-gold);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.nested-item-description {
+    margin: 0;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .vertical-process {
+        padding-left: 60px;
+        margin: 25px 0;
+    }
+    
+    .vertical-process::before {
+        left: 60px;
+    }
+    
+    .process-number {
+        left: -80px;
+        width: 35px;
+        height: 35px;
+        font-size: 1.3rem;
+    }
+    
+    .process-title {
+        font-size: 1.1rem;
+    }
+    
+    .process-description {
+        font-size: 0.95rem;
+    }
+    
+    .process-item {
+        margin-bottom: 30px;
+    }
+    
+    .nested-item-number {
+        right: -10px;
+        width: 25px;
+        height: 25px;
+        font-size: 0.8rem;
+    }
+    
+    /* Улучшение для списков внутри процесса */
+    .process-description ul, 
+    .process-description ol {
+        padding-left: 20px;
+        margin: 10px 0;
+    }
+    
+    .process-description li {
+        margin-bottom: 8px;
+    }
+}
+
+@media (max-width: 576px) {
+    .vertical-process {
+        padding-left: 55px;
+    }
+    
+    .vertical-process::before {
+        left: 55px;
+    }
+    
+    .process-number {
+        left: -75px;
+        width: 32px;
+        height: 32px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .vertical-process {
+        padding-left: 45px;
+        margin: 20px 0;
+    }
+    
+    .vertical-process::before {
+        left: 48px;
+        width: 2px;
+    }
+    
+    .process-number {
+        left: -66px;
+        width: 28px;
+        height: 28px;
+        font-size: 1rem;
+        box-shadow: 0 3px 10px rgba(163, 36, 36, 0.2);
+    }
+    
+    .process-title {
+        font-size: 1rem;
+        margin-bottom: 8px;
+    }
+    
+    .process-description {
+        font-size: 0.9rem;
+    }
+    
+    .process-item {
+        margin-bottom: 25px;
+        padding-left: 15px;
+    }
+    
+    .nested-item {
+        padding: 8px 10px;
+        margin-bottom: 10px;
+    }
+    
+    .nested-item-number {
+        right: -8px;
+        width: 22px;
+        height: 22px;
+        font-size: 0.7rem;
+    }
+    
+    /* Улучшение для списков на очень маленьких экранах */
+    .process-description ul, 
+    .process-description ol {
+        padding-left: 15px;
+    }
+    
+    .process-description li {
+        margin-bottom: 6px;
+        font-size: 0.85rem;
+    }
+}
+
+/* Дополнительные стили для очень маленьких экранов */
+@media (max-width: 360px) {
+    .vertical-process {
+        padding-left: 10px;
+    }
+    
+    .vertical-process::before {
+        left: 10px;
+    }
+    
+    .process-number {
+        left: -32px;
+        width: 25px;
+        height: 25px;
+        font-size: 0.9rem;
+    }
+    
+    .process-title {
+        font-size: 0.95rem;
+    }
+    
+    .process-description {
+        font-size: 0.85rem;
+    }
+}
