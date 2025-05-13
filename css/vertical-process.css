@@ -1,13 +1,9 @@
-/* Стили для вертикального процесса с линией и номерами */
-
-/* Контейнер для процесса */
 .vertical-process {
     position: relative;
     margin: 30px 0;
     padding: 0 0 0 80px;
 }
 
-/* Вертикальная линия */
 .vertical-process::before {
     content: '';
     position: absolute;
@@ -19,7 +15,6 @@
     z-index: 1;
 }
 
-/* Шаг процесса */
 .process-item {
     position: relative;
     margin-bottom: 40px;
@@ -30,7 +25,6 @@
     margin-bottom: 0;
 }
 
-/* Номер шага */
 .process-number {
     position: absolute;
     left: -100px;
@@ -50,7 +44,6 @@
     z-index: 2;
 }
 
-/* Заголовок шага */
 .process-title {
     margin: 0 0 10px 0;
     color: var(--carmine-red);
@@ -58,7 +51,6 @@
     font-weight: 600;
 }
 
-/* Описание шага */
 .process-description {
     margin: 0;
     color: var(--text-color);
@@ -66,14 +58,12 @@
     line-height: 1.5;
 }
 
-/* Первая буква в описании */
 .process-description strong:first-child {
     color: var(--carmine-red);
     font-size: 1.1em;
     font-weight: bold;
 }
 
-/* Специальные стили для вложенных шагов (как на третьем скриншоте) */
 .nested-items {
     margin: 15px 0 0 0;
     padding: 0;
@@ -123,7 +113,6 @@
     line-height: 1.4;
 }
 
-/* Адаптивность для мобильных устройств */
 @media (max-width: 768px) {
     .vertical-process {
         padding-left: 60px;
@@ -160,7 +149,6 @@
         font-size: 0.8rem;
     }
     
-    /* Улучшение для списков внутри процесса */
     .process-description ul, 
     .process-description ol {
         padding-left: 20px;
@@ -234,7 +222,6 @@
         font-size: 0.7rem;
     }
     
-    /* Улучшение для списков на очень маленьких экранах */
     .process-description ul, 
     .process-description ol {
         padding-left: 15px;
@@ -246,7 +233,6 @@
     }
 }
 
-/* Дополнительные стили для очень маленьких экранов */
 @media (max-width: 360px) {
     .vertical-process {
         padding-left: 10px;

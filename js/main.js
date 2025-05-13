@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Variables
     const header = document.getElementById('site-header');
     const menuToggle = document.getElementById('menu-toggle');
     const mainNav = document.getElementById('main-nav');
@@ -10,11 +9,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     let lastScrollTop = 0;
     
-    // Funcionalidad de navegación en móviles
     menuToggle.addEventListener('click', function() {
         mainNav.classList.toggle('active');
         
-        // Animar las barras del botón de menú
         const spans = this.querySelectorAll('span');
         if (mainNav.classList.contains('active')) {
             spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
@@ -27,7 +24,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Cerrar menú al hacer clic en un enlace (para móviles)
     document.querySelectorAll('#main-nav a').forEach(link => {
         link.addEventListener('click', function() {
             if (window.innerWidth <= 768) {
@@ -40,22 +36,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Ocultar/mostrar header al hacer scroll
     window.addEventListener('scroll', function() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
         if (scrollTop > lastScrollTop && scrollTop > 200) {
-            // Scroll hacia abajo
             header.classList.add('hidden');
         } else {
-            // Scroll hacia arriba
             header.classList.remove('hidden');
         }
         
         lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     });
     
-    // Manejo de cookies
     function setCookie(name, value, days) {
         let expires = '';
         if (days) {
@@ -77,7 +69,6 @@ document.addEventListener('DOMContentLoaded', function() {
         return null;
     }
     
-    // Comprobar si el usuario ya aceptó las cookies
     if (getCookie('cookiesAccepted')) {
         cookieConsent.style.display = 'none';
         mainContent.classList.remove('cookie-blur');
@@ -87,7 +78,6 @@ document.addEventListener('DOMContentLoaded', function() {
         footer.classList.add('cookie-blur');
     }
     
-    // Evento para aceptar cookies
     acceptCookiesBtn.addEventListener('click', function() {
         setCookie('cookiesAccepted', 'true', 365);
         cookieConsent.style.display = 'none';
@@ -95,7 +85,6 @@ document.addEventListener('DOMContentLoaded', function() {
         footer.classList.remove('cookie-blur');
     });
     
-    // Añadir clase active al enlace de navegación actual
     const currentLocation = window.location.pathname;
     const navLinks = document.querySelectorAll('#main-nav a');
     

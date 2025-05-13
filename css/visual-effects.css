@@ -1,6 +1,3 @@
-/* Efectos visuales y animaciones para mejorar la apariencia del sitio */
-
-/* Efectos para imágenes */
 .card-image {
     position: relative;
     overflow: hidden;
@@ -24,7 +21,6 @@
     opacity: 0.9;
 }
 
-/* Efectos de texto */
 article h2 {
     position: relative;
     overflow: hidden;
@@ -51,7 +47,6 @@ article h2::before {
     }
 }
 
-/* Efectos para tarjetas */
 .info-card {
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -81,7 +76,6 @@ article h2::before {
     background: var(--gradient-4);
 }
 
-/* Efectos para botones */
 .btn {
     position: relative;
     overflow: hidden;
@@ -114,7 +108,6 @@ article h2::before {
     }
 }
 
-/* Efectos para listas */
 .card-content ul li, .card-content ol li {
     transition: all 0.3s ease;
 }
@@ -124,7 +117,6 @@ article h2::before {
     color: var(--carmine-red);
 }
 
-/* Efectos para tablas */
 tbody tr {
     transition: all 0.3s ease;
 }
@@ -134,7 +126,6 @@ tbody tr:hover {
     transform: scale(1.01);
 }
 
-/* Efectos para secciones de pasos */
 .steps li {
     transition: all 0.3s ease;
 }
@@ -153,7 +144,6 @@ tbody tr:hover {
     box-shadow: 0 5px 15px rgba(163, 36, 36, 0.4);
 }
 
-/* Efectos para cajas destacadas */
 .highlight-box {
     position: relative;
     overflow: hidden;
@@ -180,7 +170,6 @@ tbody tr:hover {
     width: 7px;
 }
 
-/* Efectos para grids */
 .info-grid > div {
     transition: all 0.3s ease;
 }
@@ -191,7 +180,6 @@ tbody tr:hover {
     z-index: 2;
 }
 
-/* Efectos para citas */
 blockquote {
     transition: all 0.3s ease;
 }
@@ -201,7 +189,6 @@ blockquote:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Efectos para el header al hacer scroll */
 #site-header {
     transition: all 0.4s ease;
 }
@@ -212,7 +199,6 @@ blockquote:hover {
     padding: 10px 0;
 }
 
-/* Efectos para el menú de navegación */
 #main-nav a {
     position: relative;
     transition: all 0.3s ease;
@@ -233,7 +219,6 @@ blockquote:hover {
     width: 100%;
 }
 
-/* Efectos para el footer */
 .footer-links a {
     transition: all 0.3s ease;
 }
@@ -243,7 +228,6 @@ blockquote:hover {
     color: var(--amber-gold);
 }
 
-/* Animación para la página al cargar */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -295,7 +279,6 @@ main {
     animation: fadeIn 0.8s ease-out;
 }
 
-/* Clases para animaciones controladas por JavaScript */
 .fade-in {
     opacity: 0;
     transform: translateY(20px);
@@ -315,7 +298,6 @@ main {
     animation: popIn 0.5s ease forwards;
 }
 
-/* Efectos adicionales para elementos activos */
 .steps li.active {
     transform: translateX(15px) !important;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
@@ -330,12 +312,9 @@ main {
     transform: scale(1.02) !important;
 }
 
-/* Efecto para el header al hacer scroll */
 #site-header.header-hidden {
     transform: translateY(-100%);
 }
-
-/* Estilos para los números de paso mejorados */
 .step-number {
     position: absolute;
     left: 25px;
@@ -361,7 +340,6 @@ main {
     box-shadow: 0 8px 25px rgba(163, 36, 36, 0.4);
 }
 
-/* Efectos para imágenes cuando se carguen */
 .card-image img {
     transition: all 0.5s ease;
 }
@@ -370,7 +348,6 @@ main {
     transform: scale(1.05);
 }
 
-/* Efectos para el banner de cookies */
 .cookie-consent {
     animation: slideUp 0.5s ease-out;
 }
