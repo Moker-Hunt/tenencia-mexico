@@ -89,13 +89,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('#main-nav a');
     
     navLinks.forEach(link => {
+        link.classList.remove('active');
+    });
+    
+    navLinks.forEach(link => {
         const linkPath = link.getAttribute('href');
-        if (currentLocation.includes(linkPath) && linkPath !== 'index.html') {
+        
+        if (linkPath === 'index.html' && (currentLocation.endsWith('/') || currentLocation.endsWith('index.html'))) {
             link.classList.add('active');
-        } else if (currentLocation.endsWith('/') || currentLocation.endsWith('index.html')) {
-            if (linkPath === 'index.html') {
-                link.classList.add('active');
-            }
+        } else if (linkPath !== 'index.html' && currentLocation.endsWith(linkPath)) {
+            link.classList.add('active');
         }
     });
 });
