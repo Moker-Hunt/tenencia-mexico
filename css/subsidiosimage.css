@@ -1,0 +1,38 @@
+.image-holder {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#image-subsidios-1 {
+    background-image: url('../images/subsidios-image-1.webp');
+}
+
+#image-subsidios-2 {
+    background-image: url('../images/subsidios-image-2.webp');
+}
+
+#image-subsidios-3 {
+    background-image: url('../images/subsidios-image-3.webp');
+}
+
+#image-subsidios-4 {
+    background-image: url('../images/subsidios-image-4.webp');
+}
+
+#image-subsidios-5 {
+    background-image: url('../images/subsidios-image-5.webp');
+}
+
+#image-subsidios-6 {
+    background-image: url('../images/subsidios-image-6.webp');
+}

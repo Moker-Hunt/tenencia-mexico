@@ -1,0 +1,38 @@
+.image-holder {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#image-placas-1 {
+    background-image: url('../images/placas-image-1.webp');
+}
+
+#image-placas-2 {
+    background-image: url('../images/placas-image-2.webp');
+}
+
+#image-placas-3 {
+    background-image: url('../images/placas-image-3.webp');
+}
+
+#image-placas-4 {
+    background-image: url('../images/placas-image-4.webp');
+}
+
+#image-placas-5 {
+    background-image: url('../images/placas-image-5.webp');
+}
+
+#image-placas-6 {
+    background-image: url('../images/placas-image-6.webp');
+}

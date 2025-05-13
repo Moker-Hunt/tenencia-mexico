@@ -1,0 +1,38 @@
+.image-holder {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#image-licencia-1 {
+    background-image: url('../images/licencia-image-1.webp');
+}
+
+#image-licencia-2 {
+    background-image: url('../images/licencia-image-2.webp');
+}
+
+#image-licencia-3 {
+    background-image: url('../images/licencia-image-3.webp');
+}
+
+#image-licencia-4 {
+    background-image: url('../images/licencia-image-4.webp');
+}
+
+#image-licencia-5 {
+    background-image: url('../images/licencia-image-5.webp');
+}
+
+#image-licencia-6 {
+    background-image: url('../images/licencia-image-6.webp');
+}
